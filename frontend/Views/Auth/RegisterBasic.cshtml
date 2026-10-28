@@ -1,0 +1,103 @@
+@{
+	Layout = "_BlankLayout";
+	ViewData["Title"] = "Registrierung - E-Voting System";
+}
+
+@section VendorStyles {
+	<link rel="stylesheet" href="~/vendor/libs/&#64;form-validation/form-validation.css" />
+}
+
+@section VendorScripts {
+	<script src="~/vendor/libs/&#64;form-validation/popular.js"></script>
+	<script src="~/vendor/libs/&#64;form-validation/bootstrap5.js"></script>
+	<script src="~/vendor/libs/&#64;form-validation/auto-focus.js"></script>
+}
+
+@section PageStyles {
+	<link rel="stylesheet" href="~/vendor/css/pages/page-auth.css">
+}
+
+@section PageScripts {
+	<script src="~/js/pages-auth.js"></script>
+}
+
+@* ************** Content ************** *@
+<div class="container-xxl">
+	<div class="authentication-wrapper authentication-basic container-p-y">
+		<div class="authentication-inner py-6">
+
+			<!-- Register Card -->
+			<div class="card">
+				<div class="card-body">
+					<!-- Logo -->
+					<div class="app-brand justify-content-center mb-6">
+						<a href="/" class="app-brand-link">
+							<span class="app-brand-logo demo">@await Html.PartialAsync("../_Partials/_Macros")</span>
+							<span class="app-brand-text demo text-heading fw-bold">@TempData.Peek("appName")</span>
+						</a>
+					</div>
+					<!-- /Logo -->
+					<h4 class="mb-1">Willkommen beim E-Voting System 🔒</h4>
+					<p class="mb-6">Registrieren Sie sich für die Teilnahme an sicheren digitalen Wahlen</p>
+
+					<form id="formAuthentication" class="mb-6" action="~/Dashboard" method="POST">
+						<div class="mb-6">
+							<label for="username" class="form-label">Benutzername</label>
+							<input type="text" class="form-control" id="username" name="username" placeholder="Benutzername eingeben" autofocus>
+						</div>
+						<div class="mb-6">
+							<label for="email" class="form-label">E-Mail</label>
+							<input type="text" class="form-control" id="email" name="email" placeholder="E-Mail eingeben">
+						</div>
+						<div class="mb-6">
+							<label for="walletAddress" class="form-label">Wallet Adresse</label>
+							<input type="text" class="form-control" id="walletAddress" name="walletAddress" placeholder="Polygon Wallet Adresse">
+						</div>
+						<div class="mb-6 form-password-toggle">
+							<label class="form-label" for="password">Passwort</label>
+							<div class="input-group input-group-merge">
+								<input type="password" id="password" class="form-control" name="password" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="password" />
+								<span class="input-group-text cursor-pointer"><i class="ti ti-eye-off"></i></span>
+							</div>
+						</div>
+
+						<div class="my-8">
+							<div class="form-check mb-0 ms-2">
+								<input class="form-check-input" type="checkbox" id="terms-conditions" name="terms">
+								<label class="form-check-label" for="terms-conditions">
+									Ich stimme den
+									<a href="javascript:void(0);">Datenschutzbestimmungen & Nutzungsbedingungen</a> zu
+								</label>
+							</div>
+						</div>
+						<button class="btn btn-primary d-grid w-100">
+							Registrieren
+						</button>
+					</form>
+
+					<p class="text-center">
+						<span>Bereits registriert?</span>
+						<a href="/Auth/LoginBasic">
+							<span>Hier anmelden</span>
+						</a>
+					</p>
+
+					<div class="divider my-6">
+						<div class="divider-text">oder</div>
+					</div>
+
+					<div class="d-flex justify-content-center">
+						<a href="javascript:;" class="btn btn-sm btn-icon rounded-pill btn-text-github me-1_5" title="Mit GitHub anmelden">
+							<i class="tf-icons ti ti-brand-github-filled"></i>
+						</a>
+
+						<a href="javascript:;" class="btn btn-sm btn-icon rounded-pill btn-text-google-plus" title="Mit eID anmelden">
+							<i class="tf-icons ti ti-id"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+			<!-- Register Card -->
+		</div>
+	</div>
+</div>

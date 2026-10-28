@@ -1,0 +1,509 @@
+@{
+	Layout = "_FrontLayout";
+	ViewData["Title"] = "Landing Page - Front Pages";
+}
+
+@section VendorStyles {
+	<link rel="stylesheet" href="~/vendor/libs/nouislider/nouislider.css" />
+	<link rel="stylesheet" href="~/vendor/libs/swiper/swiper.css" />
+}
+@section PageStyles {
+	<link rel="stylesheet" href="~/vendor/css/pages/front-page-landing.css" />
+}
+@section VendorScripts {
+	<script src="~/vendor/libs/nouislider/nouislider.js"></script>
+	<script src="~/vendor/libs/swiper/swiper.js"></script>
+}
+@section PageScripts {
+	<script src="~/js/front-page-landing.js"></script>
+}
+
+@* ************** Content ************** *@
+<div data-bs-spy="scroll" class="scrollspy-example">
+	<!-- Hero: Start -->
+	<section id="hero-animation">
+		<div id="landingHero" class="section-py landing-hero position-relative">
+			<div class="container">
+				<div class="hero-content-wrapper">
+					<!-- Text Content -->
+					<div class="hero-text-box text-center text-lg-start">
+						<h1 class="hero-title mb-4">
+							Blockchain basiertes<br /> E-Voting-System
+						</h1>
+						<p class="hero-sub-title mb-5">
+							Sicheres und transparentes elektronisches Wahlsystem
+							<br class="d-none d-lg-block" />
+							basierend auf Blockchain-Technologie und Open Source.
+						</p>
+						<div class="hero-actions">
+							<div class="github-info">
+								<span class="github-label">
+									Open Source
+									<img src="~/img/icons/landing/github.png" alt="GitHub" class="github-icon" />
+								</span>
+							</div>
+							<a href="https://github.com/your-repo" class="btn btn-primary btn-lg">
+								GitHub Repository
+							</a>
+						</div>
+					</div>
+
+					<!-- Hero Image -->
+					<div class="hero-image">
+						<img src="~/img/icons/landing/blockchain-voting.png"
+							 alt="Blockchain Voting System"
+							 class="hero-illustration" />
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</div>
+<!-- Hero: End -->
+
+
+	<!-- Features: Start -->
+	<section id="landingFeatures" class="section-py landing-features">
+		<div class="container">
+			<div class="text-center mb-4">
+				<span class="badge bg-label-primary">Kernfunktionen</span>
+			</div>
+			<h4 class="text-center mb-1">
+				<span class="position-relative fw-extrabold z-1">
+					Innovative Technologie
+					<img src="~/img/front-pages/icons/section-title-icon.png" alt="section title icon"
+						class="section-title-img position-absolute object-fit-contain bottom-0 z-n1">
+				</span>
+				für sichere Wahlen
+			</h4>
+			<p class="text-center mb-12">Fortschrittliche Funktionen für maximale Sicherheit und Transparenz</p>
+			<div class="features-icon-wrapper row gx-0 gy-6 g-sm-12">
+				<div class="col-lg-4 col-sm-6 text-center features-icon-box">
+					<div class="text-center mb-4">
+						<img src="~/img/icons/landing/blockchain.png" alt="Blockchain Security" />
+					</div>
+					<h5 class="mb-2">Blockchain-Sicherheit</h5>
+					<p class="features-icon-description">Unveränderbare Aufzeichnung aller Stimmen durch Polygon
+						Blockchain-Technologie.</p>
+				</div>
+				<div class="col-lg-4 col-sm-6 text-center features-icon-box">
+					<div class="text-center mb-4">
+						<img src="~/img/icons/landing/hierarchy.png" alt="Hierarchical Management" />
+					</div>
+					<h5 class="mb-2">Hierarchische Verwaltung</h5>
+					<p class="features-icon-description">Flexible Verwaltungsstruktur für verschiedene
+						Verwaltungsebenen.</p>
+				</div>
+				<div class="col-lg-4 col-sm-6 text-center features-icon-box">
+					<div class="text-center mb-4">
+						<img src="~/img/icons/landing/eid.png" alt="eID Integration" />
+					</div>
+					<h5 class="mb-2">eID Integration</h5>
+					<p class="features-icon-description">Sichere Identifikation durch elektronische ID oder manuelle
+						Verifizierung.</p>
+				</div>
+				<div class="col-lg-4 col-sm-6 text-center features-icon-box">
+					<div class="text-center mb-4">
+						<img src="~/img/icons/landing/open-source.png" alt="Open Source" />
+					</div>
+					<h5 class="mb-2">Open Source</h5>
+					<p class="features-icon-description">Vollständig transparenter Code unter AGPL-3.0 Lizenz.</p>
+				</div>
+				<div class="col-lg-4 col-sm-6 text-center features-icon-box">
+					<div class="text-center mb-4">
+						<img src="~/img/icons/landing/accessibility.png" alt="Accessibility" />
+					</div>
+					<h5 class="mb-2">Barrierefreiheit</h5>
+					<p class="features-icon-description">WCAG 2.1 konform für maximale Zugänglichkeit.</p>
+				</div>
+				<div class="col-lg-4 col-sm-6 text-center features-icon-box">
+					<div class="text-center mb-4">
+						<img src="~/img/icons/landing/mobile.png" alt="Mobile Support" />
+					</div>
+					<h5 class="mb-2">Mobile Unterstützung</h5>
+					<p class="features-icon-description">Optimiert für alle Geräte durch responsive Design.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Features: End -->
+	<!-- Technical Details: Start -->
+	<section id="landingTechnical" class="section-py bg-body landing-technical">
+		<div class="container">
+			<div class="text-center mb-4">
+				<span class="badge bg-label-primary">Technologie</span>
+			</div>
+			<h4 class="text-center mb-1">
+				<span class="position-relative fw-extrabold z-1">
+					Blockchain-Technologie
+					<img src="~/img/front-pages/icons/section-title-icon.png" alt="section title icon"
+						class="section-title-img position-absolute object-fit-contain bottom-0 z-n1">
+				</span>
+				für maximale Sicherheit
+			</h4>
+			<p class="text-center mb-12">Moderne Technologien für vertrauenswürdige digitale Wahlen</p>
+
+			<div class="row gy-4">
+				<div class="col-lg-6">
+					<div class="card h-100">
+						<div class="card-body">
+							<h5 class="mb-3">Smart Contracts auf Polygon</h5>
+							<ul class="list-unstyled">
+								<li class="mb-2">✓ Gas-optimierte Implementierung</li>
+								<li class="mb-2">✓ Automatische Stimmenauszählung</li>
+								<li class="mb-2">✓ Unveränderliche Aufzeichnung</li>
+								<li>✓ Transparente Verifizierung</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-6">
+					<div class="card h-100">
+						<div class="card-body">
+							<h5 class="mb-3">Sicherheitsfeatures</h5>
+							<ul class="list-unstyled">
+								<li class="mb-2">✓ End-to-End Verschlüsselung</li>
+								<li class="mb-2">✓ Zero-Knowledge Proofs</li>
+								<li class="mb-2">✓ Anonyme Stimmabgabe</li>
+								<li>✓ Manipulationssicherheit</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Technical Details: End -->
+	<!-- Implementation Details: Start -->
+	<section id="landingImplementation" class="section-py landing-implementation">
+		<div class="container">
+			<div class="text-center mb-4">
+				<span class="badge bg-label-primary">Implementierung</span>
+			</div>
+			<h4 class="text-center mb-1">
+				<span class="position-relative fw-extrabold z-1">
+					Open Source
+					<img src="~/img/front-pages/icons/section-title-icon.png" alt="section title icon"
+						class="section-title-img position-absolute object-fit-contain bottom-0 z-n1">
+				</span>
+				Entwicklung
+			</h4>
+			<p class="text-center mb-12">Transparente Entwicklung mit Community-Beteiligung</p>
+
+			<div class="row gy-4">
+				<div class="col-lg-4">
+					<div class="card text-center h-100">
+						<div class="card-body">
+							<i class="ti ti-code text-primary mb-4" style="font-size: 2rem;"></i>
+							<h5>Frontend</h5>
+							<ul class="list-unstyled">
+								<li>React Web App</li>
+								<li>TypeScript</li>
+								<li>Web3.js Integration</li>
+								<li>WCAG 2.1 konform</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-4">
+					<div class="card text-center h-100">
+						<div class="card-body">
+							<i class="ti ti-server text-primary mb-4" style="font-size: 2rem;"></i>
+							<h5>Backend</h5>
+							<ul class="list-unstyled">
+								<li>Node.js Microservices</li>
+								<li>RESTful API</li>
+								<li>eID Integration</li>
+								<li>Event-basierte Architektur</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-4">
+					<div class="card text-center h-100">
+						<div class="card-body">
+							<i class="ti ti-box text-primary mb-4" style="font-size: 2rem;"></i>
+							<h5>Smart Contracts</h5>
+							<ul class="list-unstyled">
+								<li>Solidity</li>
+								<li>Polygon Network</li>
+								<li>Gas-optimiert</li>
+								<li>Sicherheitsgeprüft</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Implementation Details: End -->
+	<!-- Community Section: Start -->
+	<section id="landingCommunity" class="section-py bg-body landing-community">
+		<div class="container">
+			<div class="text-center mb-4">
+				<span class="badge bg-label-primary">Community</span>
+			</div>
+			<h4 class="text-center mb-1">
+				<span class="position-relative fw-extrabold z-1">
+					Open Source
+					<img src="~/img/front-pages/icons/section-title-icon.png" alt="section title icon"
+						class="section-title-img position-absolute object-fit-contain bottom-0 z-n1">
+				</span>
+				Community
+			</h4>
+			<p class="text-center mb-12">Werden Sie Teil der Entwickler-Community</p>
+
+			<div class="row gy-4">
+				<div class="col-lg-3 col-sm-6">
+					<div class="card text-center">
+						<div class="card-body">
+							<i class="ti ti-code-circle text-primary mb-4" style="font-size: 2rem;"></i>
+							<h5>Entwickeln</h5>
+							<p>Tragen Sie zum Code bei</p>
+							<a href="https://github.com/your-repo/contribute" class="btn btn-primary">Beitragen</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-3 col-sm-6">
+					<div class="card text-center">
+						<div class="card-body">
+							<i class="ti ti-bug text-primary mb-4" style="font-size: 2rem;"></i>
+							<h5>Testen</h5>
+							<p>Helfen Sie beim Testing</p>
+							<a href="https://github.com/your-repo/issues" class="btn btn-primary">Issues</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-3 col-sm-6">
+					<div class="card text-center">
+						<div class="card-body">
+							<i class="ti ti-books text-primary mb-4" style="font-size: 2rem;"></i>
+							<h5>Dokumentieren</h5>
+							<p>Verbessern Sie die Docs</p>
+							<a href="https://github.com/your-repo/docs" class="btn btn-primary">Docs</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-3 col-sm-6">
+					<div class="card text-center">
+						<div class="card-body">
+							<i class="ti ti-messages text-primary mb-4" style="font-size: 2rem;"></i>
+							<h5>Diskutieren</h5>
+							<p>Nehmen Sie teil</p>
+							<a href="https://github.com/your-repo/discussions" class="btn btn-primary">Diskussionen</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Community Section: End -->
+	<!-- FAQ: Start -->
+	<section id="landingFAQ" class="section-py bg-body landing-faq">
+		<div class="container">
+			<div class="text-center mb-4">
+				<span class="badge bg-label-primary">FAQ</span>
+			</div>
+			<h4 class="text-center mb-1">
+				Häufig gestellte
+				<span class="position-relative fw-extrabold z-1">
+					Fragen
+					<img src="~/img/front-pages/icons/section-title-icon.png" alt="section title icon"
+						class="section-title-img position-absolute object-fit-contain bottom-0 z-n1">
+				</span>
+			</h4>
+			<p class="text-center mb-12 pb-md-4">Antworten auf häufig gestellte Fragen zu unserem E-Voting-System</p>
+
+			<div class="row gy-12 align-items-center">
+				<div class="col-lg-12">
+					<div class="accordion" id="accordionExample">
+
+						<div class="card accordion-item">
+							<h2 class="accordion-header" id="headingOne">
+								<button type="button" class="accordion-button" data-bs-toggle="collapse"
+									data-bs-target="#accordionOne">
+									Wie wird die Sicherheit der Stimmen gewährleistet?
+								</button>
+							</h2>
+							<div id="accordionOne" class="accordion-collapse collapse show">
+								<div class="accordion-body">
+									Die Sicherheit wird durch mehrere Mechanismen gewährleistet: Die
+									Blockchain-Technologie macht alle Transaktionen unveränderlich,
+									End-to-End-Verschlüsselung schützt die Übertragung, und Zero-Knowledge-Proofs
+									ermöglichen die Verifikation ohne Offenlegung der Identität.
+								</div>
+							</div>
+						</div>
+
+						<div class="card accordion-item">
+							<h2 class="accordion-header" id="headingTwo">
+								<button type="button" class="accordion-button collapsed" data-bs-toggle="collapse"
+									data-bs-target="#accordionTwo">
+									Wie funktioniert die Identitätsverifikation?
+								</button>
+							</h2>
+							<div id="accordionTwo" class="accordion-collapse collapse">
+								<div class="accordion-body">
+									Die Identitätsverifikation erfolgt entweder über eID-Integration für die digitale
+									Verifizierung oder durch
+									manuelle Überprüfung vor Ort. Die Stimmabgabe ist strikt von der Identifikation
+									getrennt.
+								</div>
+							</div>
+						</div>
+
+						<div class="card accordion-item">
+							<h2 class="accordion-header" id="headingThree">
+								<button type="button" class="accordion-button collapsed" data-bs-toggle="collapse"
+									data-bs-target="#accordionThree">
+									Was sind die technischen Voraussetzungen?
+								</button>
+							</h2>
+							<div id="accordionThree" class="accordion-collapse collapse">
+								<div class="accordion-body">
+									Das System ist als Progressive Web App implementiert und läuft in jedem modernen
+									Browser. Für die Nutzung wird
+									entweder ein digitaler Identitätsnachweis oder die Möglichkeit zur persönlichen
+									Identifikation benötigt.
+								</div>
+							</div>
+						</div>
+
+						<div class="card accordion-item">
+							<h2 class="accordion-header" id="headingFour">
+								<button type="button" class="accordion-button collapsed" data-bs-toggle="collapse"
+									data-bs-target="#accordionFour">
+									Wie wird die Anonymität der Wähler geschützt?
+								</button>
+							</h2>
+							<div id="accordionFour" class="accordion-collapse collapse">
+								<div class="accordion-body">
+									Die Anonymität wird durch eine strikte Trennung von Identifikation und Stimmabgabe
+									gewährleistet.
+									Nach der Verifizierung werden keine personenbezogenen Daten mit der Stimme
+									verknüpft.
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- FAQ: End -->
+	<!-- Contact Us: Start -->
+	<section id="landingContact" class="section-py landing-contact">
+		<div class="container">
+			<div class="text-center mb-4">
+				<span class="badge bg-label-primary">Kontakt</span>
+			</div>
+			<h4 class="text-center mb-1">
+				<span class="position-relative fw-extrabold z-1">
+					Open Source
+					<img src="~/img/front-pages/icons/section-title-icon.png" alt="section title icon"
+						class="section-title-img position-absolute object-fit-contain bottom-0 z-n1">
+				</span>
+				Zusammenarbeit
+			</h4>
+			<p class="text-center mb-12 pb-md-4">Kontaktieren Sie uns für Fragen zur Implementierung oder
+				Community-Beteiligung</p>
+
+			<div class="row g-6">
+				<div class="col-lg-5">
+					<div class="contact-img-box position-relative border p-2 h-100">
+						<div class="p-4 pb-2">
+							<div class="row g-4">
+								<div class="col-12">
+									<div class="d-flex align-items-center">
+										<div class="badge bg-label-primary rounded p-1_5 me-3"><i
+												class="ti ti-brand-github ti-lg"></i></div>
+										<div>
+											<p class="mb-0">GitHub</p>
+											<h6 class="mb-0"><a href="https://github.com/your-repo"
+													class="text-heading">Repository</a></h6>
+										</div>
+									</div>
+								</div>
+								<div class="col-12">
+									<div class="d-flex align-items-center">
+										<div class="badge bg-label-success rounded p-1_5 me-3"><i
+												class="ti ti-messages ti-lg"></i></div>
+										<div>
+											<p class="mb-0">Diskussionen</p>
+											<h6 class="mb-0"><a href="https://github.com/your-repo/discussions"
+													class="text-heading">Community Forum</a></h6>
+										</div>
+									</div>
+								</div>
+								<div class="col-12">
+									<div class="d-flex align-items-center">
+										<div class="badge bg-label-info rounded p-1_5 me-3"><i
+												class="ti ti-bug ti-lg"></i></div>
+										<div>
+											<p class="mb-0">Issues</p>
+											<h6 class="mb-0"><a href="https://github.com/your-repo/issues"
+													class="text-heading">Bug Reports & Features</a></h6>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-7">
+					<div class="card h-100">
+						<div class="card-body">
+							<h4 class="mb-2">Nachricht senden</h4>
+							<p class="mb-6">
+								Haben Sie Fragen zur Implementierung oder möchten Sie zur Entwicklung beitragen?
+								Schreiben Sie uns!
+							</p>
+							<form>
+								<div class="row g-4">
+									<div class="col-md-6">
+										<label class="form-label">Name</label>
+										<input type="text" class="form-control" placeholder="Name" />
+									</div>
+									<div class="col-md-6">
+										<label class="form-label">E-Mail</label>
+										<input type="email" class="form-control" placeholder="email@domain.com" />
+									</div>
+									<div class="col-12">
+										<label class="form-label">Nachricht</label>
+										<textarea class="form-control" rows="6" placeholder="Ihre Nachricht"></textarea>
+									</div>
+									<div class="col-12">
+										<button type="submit" class="btn btn-primary">Senden</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Contact Us: End -->
+	<!-- Footer CTA: Start -->
+	<section class="section-py bg-body">
+		<div class="container">
+			<div class="row gy-4 text-center">
+				<div class="col-12">
+					<h3 class="mb-1">Bereit für sichere digitale Wahlen?</h3>
+					<p class="mb-4">Tragen Sie zur Entwicklung bei oder implementieren Sie das System für Ihre
+						Organisation.</p>
+					<a href="https://github.com/your-repo" class="btn btn-primary me-3">GitHub</a>
+					<a href="docs/getting-started" class="btn btn-outline-primary">Dokumentation</a>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Footer CTA: End -->

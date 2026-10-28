@@ -1,0 +1,151 @@
+@{
+	ViewData["Title"] = "Kandidaten - Verwaltung";
+}
+
+@section VendorStyles {
+	<link rel="stylesheet" href="~/vendor/libs/datatables-bs5/datatables.bootstrap5.css" />
+	<link rel="stylesheet" href="~/vendor/libs/select2/select2.css" />
+	<link rel="stylesheet" href="~/vendor/libs/dropzone/dropzone.css" />
+	<link rel="stylesheet" href="~/vendor/libs/quill/typography.css" />
+	<link rel="stylesheet" href="~/vendor/libs/quill/editor.css" />
+}
+
+@section VendorScripts {
+	<script src="~/vendor/libs/moment/moment.js"></script>
+	<script src="~/vendor/libs/datatables-bs5/datatables-bootstrap5.js"></script>
+	<script src="~/vendor/libs/select2/select2.js"></script>
+	<script src="~/vendor/libs/dropzone/dropzone.js"></script>
+	<script src="~/vendor/libs/quill/quill.js"></script>
+}
+
+@section PageStyles {
+	<link rel="stylesheet" href="~/vendor/css/pages/candidates.css" />
+}
+
+@section PageScripts {
+	<script src="~/js/pages/candidates-management.js"></script>
+}
+
+@* ************** Content ************** *@
+<div class="app-candidates">
+	<!-- Add new candidate card -->
+	<div class="card mb-4">
+		<div class="card-header">
+			<h5 class="card-title mb-0">Neuen Kandidaten hinzufügen</h5>
+		</div>
+		<div class="card-body">
+			<form id="addCandidateForm" class="row g-3">
+				<!-- Left column -->
+				<div class="col-12 col-md-6">
+					<div class="mb-3">
+						<label class="form-label" for="candidateName">Name</label>
+						<input type="text" id="candidateName" class="form-control" placeholder="Name eingeben" />
+					</div>
+					<div class="mb-3">
+						<label class="form-label" for="candidateParty">Partei</label>
+						<input type="text" id="candidateParty" class="form-control" placeholder="Partei eingeben" />
+					</div>
+					<div class="mb-3">
+						<label class="form-label" for="candidateAge">Alter</label>
+						<input type="number" id="candidateAge" class="form-control" min="18"
+							placeholder="Alter eingeben" />
+					</div>
+				</div>
+
+				<!-- Right column -->
+				<div class="col-12 col-md-6">
+					<div class="mb-3">
+						<label class="form-label" for="candidateDescription">Beschreibung</label>
+						<textarea id="candidateDescription" class="form-control" rows="4"
+							style="resize: vertical; min-height: 100px;"
+							placeholder="Beschreibung des Kandidaten eingeben"></textarea>
+					</div>
+					<div class="mb-3">
+						<label class="form-label">Foto</label>
+						<div class="dropzone" id="candidatePhoto">
+							<div class="dz-message needsclick">
+								Foto hier ablegen oder klicken zum Auswählen
+								<span class="note needsclick">(Max. 2MB, JPG oder PNG)</span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Form actions -->
+				<div class="col-12">
+					<button type="submit" class="btn btn-primary me-sm-3 me-1">Kandidat hinzufügen</button>
+					<button type="reset" class="btn btn-label-secondary">Zurücksetzen</button>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<!-- Candidates list card -->
+	<div class="card">
+		<div class="card-datatable table-responsive">
+			<table class="datatables-candidates table border-top">
+				<thead>
+					<tr>
+						<th></th>
+						<th>UUID</th>
+						<th>Name</th>
+						<th>Partei</th>
+						<th>Alter</th>
+						<th>Beschreibung</th>
+						<th>Aktionen</th>
+					</tr>
+				</thead>
+			</table>
+		</div>
+	</div>
+
+	<!-- Edit Candidate Offcanvas -->
+	<div class="offcanvas offcanvas-end" tabindex="-1" id="editCandidateOffcanvas"
+		aria-labelledby="editCandidateOffcanvasLabel">
+		<div class="offcanvas-header border-bottom">
+			<h5 class="offcanvas-title" id="editCandidateOffcanvasLabel">Kandidat bearbeiten</h5>
+			<button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+		</div>
+		<div class="offcanvas-body">
+			<form id="editCandidateForm" class="row g-3">
+				<input type="hidden" id="editCandidateId">
+
+				<div class="col-12">
+					<div class="mb-3">
+						<label class="form-label" for="editCandidateName">Name</label>
+						<input type="text" id="editCandidateName" class="form-control" placeholder="Name eingeben" />
+					</div>
+					<div class="mb-3">
+						<label class="form-label" for="editCandidateParty">Partei</label>
+						<input type="text" id="editCandidateParty" class="form-control" placeholder="Partei eingeben" />
+					</div>
+					<div class="mb-3">
+						<label class="form-label" for="editCandidateAge">Alter</label>
+						<input type="number" id="editCandidateAge" class="form-control" min="18"
+							placeholder="Alter eingeben" />
+					</div>
+					<div class="mb-3">
+						<label class="form-label" for="editCandidateDescription">Beschreibung</label>
+						<textarea id="editCandidateDescription" class="form-control" rows="4"
+							style="resize: vertical; min-height: 100px;"
+							placeholder="Beschreibung des Kandidaten eingeben"></textarea>
+					</div>
+					<div class="mb-3">
+						<label class="form-label">Foto</label>
+						<div class="dropzone" id="editCandidatePhoto">
+							<div class="dz-message needsclick">
+								Foto hier ablegen oder klicken zum Auswählen
+								<span class="note needsclick">(Max. 2MB, JPG oder PNG)</span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-12 d-flex justify-content-between">
+					<button type="submit" class="btn btn-primary">Speichern</button>
+					<button type="button" class="btn btn-label-danger" id="deleteCandidateBtn">Löschen</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

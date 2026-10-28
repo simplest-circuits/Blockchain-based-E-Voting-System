@@ -1,0 +1,161 @@
+// Styles for the New Election page
+
+.new-election {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+
+  .form-control {
+    margin-bottom: 1rem;
+    border-radius: 0.25rem;
+    border: 1px solid #ced4da;
+    padding: 0.5rem 1rem;
+    transition: border-color 0.3s ease;
+
+    &:focus {
+      border-color: #007bff;
+      box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    }
+  }
+
+  .form-check-input {
+    margin-right: 0.5rem;
+  }
+
+  .form-label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #333;
+  }
+
+  .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+
+    &:hover {
+      background-color: #0056b3;
+      border-color: #004085;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .form-control {
+      width: 100%;
+    }
+  }
+}
+
+.bs-stepper {
+  .bs-stepper-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+
+    .step {
+      flex: 1;
+      text-align: center;
+      position: relative;
+
+      .step-trigger {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.75rem;
+        background-color: #f8f9fa;
+        border-radius: 0.25rem;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: #e2e6ea;
+        }
+
+        .bs-stepper-icon {
+          margin-right: 0.5rem;
+        }
+      }
+
+      &.active .step-trigger {
+        background-color: #007bff;
+        color: #fff;
+      }
+    }
+
+    .line {
+      flex: 0 0 1rem;
+      height: 2px;
+      background-color: #ced4da;
+      align-self: center;
+    }
+  }
+
+  .bs-stepper-content {
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 0.25rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.btn {
+  &-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+
+    &:hover {
+      background-color: #0056b3;
+      border-color: #004085;
+    }
+  }
+
+  &-label-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+
+    &:hover {
+      background-color: #5a6268;
+      border-color: #545b62;
+    }
+  }
+}
+
+table.table-striped {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: 20px;
+
+    th, td {
+        border: 1px solid #ddd;
+        padding: 12px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f2f2f2;
+        font-weight: bold;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+    tr:hover {
+        background-color: #e0e0e0;
+    }
+
+    th, td {
+        border-bottom: 1px solid #ddd;
+    }
+
+    .container {
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 0.25rem;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+} 

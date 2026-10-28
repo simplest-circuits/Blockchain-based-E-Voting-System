@@ -1,0 +1,200 @@
+// * Candidates Management
+// *******************************************************************************
+
+@use '../_bootstrap-extended/include' as light;
+@use '../_bootstrap-extended/include-dark' as dark;
+@import '../_custom-variables/pages';
+
+// Candidates management styles
+.candidates-management {
+  .content {
+    min-height: 30rem;
+
+    .card-header {
+      .title {
+        margin-bottom: 0;
+      }
+    }
+
+    .card-body {
+      padding: 1.5rem;
+
+      &.with-border {
+        border-left-width: 0.25rem !important;
+      }
+    }
+  }
+  // Dropzone styles
+  .dropzone {
+    min-height: 150px;
+    border: 2px dashed rgba(0, 0, 0, 0.1);
+    border-radius: $border-radius;
+    background: $white;
+
+    .dz-message {
+      margin: 2rem 0;
+      text-align: center;
+
+      .note {
+        font-size: 0.8rem;
+        display: block;
+        margin-top: 0.5rem;
+      }
+    }
+  }
+  // DataTable styles
+  .card-datatable {
+    .table {
+      thead th,
+      tbody td {
+        border-right: 1px solid rgba(0, 0, 0, 0.1);
+      }
+      tbody tr {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      }
+      thead th:last-child,
+      tbody td:last-child {
+        border-right: none;
+      }
+
+      .candidate-photo {
+        width: 40px;
+        height: 40px;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+
+      .btn-icon {
+        padding: 0.5rem;
+        line-height: 1;
+
+        i {
+          font-size: 1.25rem;
+        }
+      }
+    }
+  }
+  // Form styles
+  .form-label {
+    font-weight: 500;
+
+    &.required::after {
+      content: " *";
+      color: $danger;
+    }
+  }
+  // Modal styles
+  .modal-dialog-centered {
+    display: flex;
+    align-items: center;
+    min-height: calc(100% - 3.5rem);
+  }
+}
+
+// Light style
+@if $enable-light-style {
+  .light-style {
+    .candidates-management {
+      .dropzone {
+        background-color: light.$white;
+        border-color: light.$border-color;
+
+        .dz-message .note {
+          color: light.$text-muted;
+        }
+      }
+
+      .card-datatable {
+        .table tbody tr {
+          &:hover {
+            background-color: light.$table-hover-bg;
+          }
+        }
+      }
+
+      .status-indicator {
+        &.active {
+          background-color: light.$success;
+        }
+
+        &.inactive {
+          background-color: light.$danger;
+        }
+      }
+    }
+  }
+}
+
+// Dark style
+@if $enable-dark-style {
+  .dark-style {
+    .candidates-management {
+      .dropzone {
+        background-color: dark.$card-bg;
+        border-color: dark.$border-color;
+
+        .dz-message .note {
+          color: dark.$text-muted;
+        }
+      }
+
+      .card-datatable {
+        .table tbody tr {
+          &:hover {
+            background-color: dark.$table-hover-bg;
+          }
+        }
+      }
+
+      .status-indicator {
+        &.active {
+          background-color: dark.$success;
+        }
+
+        &.inactive {
+          background-color: dark.$danger;
+        }
+      }
+    }
+  }
+}
+
+// Responsive styles
+@include light.media-breakpoint-down(md) {
+  .candidates-management {
+    .card-datatable {
+      padding: 1rem;
+    }
+
+    .btn-icon {
+      padding: 0.4rem;
+
+      i {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+// RTL support
+@if $enable-rtl-support {
+  [dir='rtl'] {
+    .candidates-management {
+      .card-datatable {
+        .table {
+          .btn-icon {
+            &:first-child {
+              margin-left: 0.5rem;
+              margin-right: 0;
+            }
+
+            &:last-child {
+              margin-right: 0.5rem;
+              margin-left: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}

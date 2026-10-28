@@ -1,0 +1,92 @@
+@{
+    ViewData["Title"] = "Election Dashboard";
+}
+
+@section VendorStyles {
+        <link rel="stylesheet" href="~/vendor/libs/apex-charts/apex-charts.css" />
+        <link rel="stylesheet" href="~/vendor/libs/datatables-bs5/datatables.bootstrap5.css" />
+}
+
+@section VendorScripts {
+        <script src="~/vendor/libs/apex-charts/apexcharts.js"></script>
+        <script src="~/vendor/libs/datatables-bs5/datatables-bootstrap5.js"></script>
+}
+
+@section PageStyles {
+        <link rel="stylesheet" href="~/vendor/css/pages/app-election-dashboard.css" />
+}
+
+@section PageScripts {
+        <script src="~/js/app-election-dashboard.js"></script>
+}
+
+<div class="row g-6">
+    <!-- Candidate Cards -->
+    <div class="col-lg-3 col-sm-6" id="candidate-cards">
+        <!-- Example Candidate Card -->
+        <div class="card card-border-shadow-primary h-100">
+            <div class="card-body">
+                <div class="d-flex align-items-center mb-2">
+                    <div class="avatar me-4">
+                        <span class="avatar-initial rounded bg-label-primary"><i class='ti ti-user ti-28px'></i></span>
+                    </div>
+                    <h4 class="mb-0">Candidate Name</h4>
+                </div>
+                <p class="mb-1">Votes Left: <span id="votes-left">10</span></p>
+                <button class="btn btn-primary" onclick="showCandidateDetails()">View Details</button>
+            </div>
+        </div>
+    </div>
+    <!--/ Candidate Cards -->
+
+    <!-- Vote Now Button -->
+    <div class="col-12 text-center mt-4">
+        <button class="btn btn-success" id="vote-now" onclick="showVoteSuccess()">Vote Now</button>
+    </div>
+
+    <!-- Candidate Details Modal -->
+    <div class="modal fade" id="candidateDetailsModal" tabindex="-1" aria-labelledby="candidateDetailsLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="candidateDetailsLabel">Candidate Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Candidate details go here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Vote Success Modal -->
+    <div class="modal fade" id="voteSuccessModal" tabindex="-1" aria-labelledby="voteSuccessLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="voteSuccessLabel">Success</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Your vote has been successfully cast!
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function showCandidateDetails() {
+        var candidateDetailsModal = new bootstrap.Modal(document.getElementById('candidateDetailsModal'));
+        candidateDetailsModal.show();
+    }
+
+    function showVoteSuccess() {
+        var voteSuccessModal = new bootstrap.Modal(document.getElementById('voteSuccessModal'));
+        voteSuccessModal.show();
+        setTimeout(() => {
+            voteSuccessModal.hide();
+        }, 10000);
+    }
+</script>
